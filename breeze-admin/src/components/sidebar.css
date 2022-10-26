@@ -1,0 +1,36 @@
+.sidebar-container {
+  background: #363741;
+  color: #aeaec1;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  /* height: 200px; */
+  z-index: 50;
+}
+
+.hamburger-icon {
+  z-index: 20;
+}
+
+.nav {
+  position: fixed;
+  left: -100%;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  height: 100px;
+  background: #363741;
+  color: #aeaec1;
+}
+
+.nav.active {
+  left: 0;
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    height: 100%;
+    width: 200px;
+  }
+}
