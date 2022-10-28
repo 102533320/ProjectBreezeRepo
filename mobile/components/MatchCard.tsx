@@ -8,7 +8,7 @@ export default function MatchCard({ item, navigation}) {
         <View style={styles.card}>
           <Image style={styles.image} source={item.imagePath} />
           <View style={styles.titleBackground}></View>
-          <Text style={styles.title}>{item.user.first_name + ", " + item.location.city}</Text>
+          <Text style={styles.title}>{item.title + ", " + item.age}</Text>
         </View>
       </TouchableOpacity>
   );

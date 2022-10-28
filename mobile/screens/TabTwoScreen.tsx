@@ -100,7 +100,7 @@ export default function TabTwoScreen({
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{paddingTop: moderateScale(10), paddingBottom: moderateScale(10)}}
           numColumns={2}
-          data={match}
+          data={matches}
           keyExtractor={({ key }) => key}
           renderItem={({ item }) => (
           <Card 

@@ -25,7 +25,6 @@ export default function MatchConfirmScreen({ navigation, route }) {
   const [option03, setOption03] = useState(true)
   const [option04, setOption04] = useState(true)
   const [option05, setOption05] = useState(true)
-  
   /**
   * State variables for chat feature/functionality
   */
@@ -76,7 +75,7 @@ const randomMessage = (messages) => {
     text: messages[Math.floor(Math.random() * messages.length)],
     createdAt: new Date(),
     user: {
-      _id: 1,
+      _id: userId,
       name: "React Native",
       avatar: "https://placeimg.com/140/140/any",
     },
@@ -346,7 +345,7 @@ React.useEffect(() => {
               <Text style={{fontSize: moderateScale(16), marginTop: moderateScale(10)}}>{ report ? ("We won't let this person know who reported them.") : "Let this person know why you want to end the conversation."}</Text>
             </View>
             <CheckList option={option01} functionType={report ? (() => (option01 ? setOption01(false) : setOption01(true))) : () => [(setOption01(false), checkSelection(option01))]} message={ report ? ("Fake Profile") : "No Longer Interested" } iconName={report ? ("check") : "checkbox-blank-circle"} borderRadius={report ? (0) : 15} backgroundColor={report ? ("#8A7DFF") : "#ffffff"} iconColor={report ? ("#ffffff") : "#8A7DFF"}/>
-            <CheckList option={option02} functionType = {report ? (() => (option02 ? setOption02(false) : setOption02(true))) : () => [(setOption02(false), checkSelection(option02))]} message={ report ? ("Inappropiate Messages") : "Found Someone Else" } iconName={report ? ("check") : "checkbox-blank-circle"} borderRadius={report ? (0) : 15} backgroundColor={report ? ("#8A7DFF") : "#ffffff"} iconColor={report ? ("#ffffff") : "#8A7DFF"}/>
+            <CheckList option={option02} functionType = {report ? (() => (option02 ? setOption02(false) : setOption02(true))) : () => [(setOption02(false), checkSelection(option02))]} message={ report ? ("Inappropiate Message") : "Found Someone Else" } iconName={report ? ("check") : "checkbox-blank-circle"} borderRadius={report ? (0) : 15} backgroundColor={report ? ("#8A7DFF") : "#ffffff"} iconColor={report ? ("#ffffff") : "#8A7DFF"}/>
             <CheckList option={option03} functionType = {report ? (() => (option03 ? setOption03(false) : setOption03(true))) : () => [(setOption03(false), checkSelection(option03))]} message={ report ? ("Inappropiate Photos") : "Too Much Time Passed" } iconName={report ? ("check") : "checkbox-blank-circle"} borderRadius={report ? (0) : 15} backgroundColor={report ? ("#8A7DFF") : "#ffffff"} iconColor={report ? ("#ffffff") : "#8A7DFF"}/>
             <CheckList option={option04} functionType = {report ? (() => (option04 ? setOption04(false) : setOption04(true))) : () => [(setOption04(false), checkSelection(option04))]} message={ report ? ("Underage User") : "No Chemistry" } iconName={report ? ("check") : "checkbox-blank-circle"} borderRadius={report ? (0) : 15} backgroundColor={report ? ("#8A7DFF") : "#ffffff"} iconColor={report ? ("#ffffff") : "#8A7DFF"}/>
             <CheckList option={option05} functionType = {report ? (() => (option05 ? setOption05(false) : setOption05(true))) : () => [(setOption05(false), checkSelection(option05))]} message={ report ? ("Offline Behaviour") : "Other" } iconName={report ? ("check") : "checkbox-blank-circle"} borderRadius={report ? (0) : 15} backgroundColor={report ? ("#8A7DFF") : "#ffffff"} iconColor={report ? ("#ffffff") : "#8A7DFF"}/>

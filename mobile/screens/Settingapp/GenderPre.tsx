@@ -70,9 +70,8 @@ export default function GenderPrefScreen({ navigation, route }) {
     <HeaderSetting title="Gender Pref." navigation={navigation}/>
     <ActivityIndicator visible={loading}/>
     <View style={[styles.container,{backgroundColor:colorTheme.background}]}>
-      <View style={styles.option}>
         <AppForm
-          initialValues={{ gender: "" }}
+          initialValues={{ gender: gender }}
           onSubmit={(values) => {
             console.log(values);
             updateUserData(values.gender);
@@ -80,18 +79,19 @@ export default function GenderPrefScreen({ navigation, route }) {
           //onSubmit={() => console.log(route.params)}
           validationSchema={validationSchema}
         >
+        <View style={styles.option}>
           <FormPicker
             name="gender"
             data={DATA}
             initialState={DATA[index]}
             keyExtractor={(item: any) => item.id}
           />
+        </View>
           <View style={styles.save}>
             <SubmitButton title="Save" />
           </View>
         </AppForm>
       </View>
-    </View>
     </>
 
   );
@@ -109,7 +109,10 @@ const styles = StyleSheet.create({
     marginBottom: moderateScale(30),
   },
   save: {
+    flex: 1,
     justifyContent: "flex-end",
-    marginTop: moderateScale(380),
+    width: "80%",
+    left: moderateScale(40),
+    marginBottom: moderateScale(20),
   },
 });

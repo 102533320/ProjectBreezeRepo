@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { FlatList } from "react-native";
+import { FlatList,View } from "react-native";
 import InterestPickerItem from "./InterestPickerItem";
 import ErrorMessage from "./ErrorMessage";
 import { useFormikContext } from "formik";
 import InterestItemSetting from "./InterestItemSetting";
+import {   moderateScale } from "../../constants/Layout";
 
 function InterestSetting({ name, data, ...rest }: any) {
   const { setFieldValue, errors, touched, values }: any = useFormikContext();
@@ -30,7 +31,9 @@ function InterestSetting({ name, data, ...rest }: any) {
         )}
         {...rest}
       />
+      <View style={{  width: "100%", left: moderateScale(10),}}>
       <ErrorMessage error={errors[name]} visible={touched[name]} />
+      </View>
     </>
   );
 }

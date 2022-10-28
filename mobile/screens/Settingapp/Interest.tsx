@@ -80,7 +80,7 @@ export default function Interest({ navigation, route }) {
       <ActivityIndicator visible={loading} />
       <View style={[styles.container,{backgroundColor:colorTheme.background}]}>
         <AppForm
-          initialValues={{ interests: [] }}
+          initialValues={{ interests: oldInterest }}
           onSubmit={(value) => {
             updateUserData(value);
           }}
